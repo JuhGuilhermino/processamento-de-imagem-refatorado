@@ -17,19 +17,31 @@ class Editor {
         int height;
         int width;
         string m_operation;
-        vector <Pixel> img;
+        vector <vector <Pixel>> img;
+        vector <vector <Pixel>> new_img;
 
-        //gray
+        /** Muda a corda imagem para escala de cinza
+         *  Cinza = (r + g + b)/3 de um pixel.
+         *  Os valores rgb recebem cinza.
+         */
+        void gray();
 
-        //enlarge
+        /** Aumenta o tamanho da imagem 2x
+         *  O novo pixel é a média dos valores rgb dos vizinhos.
+         */ 
+        void enlarge();
 
-        //reduce
+        // Reduz o tamanho da imagem 2x
+        void reduce();
 
         //rotate
+        void rotate();
 
         //sharp
+        void sharp();
 
         //blur
+        void blur();
 
     public:
 
