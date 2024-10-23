@@ -1,0 +1,92 @@
+\hypertarget{classEditor}{}\doxysection{Editor Class Reference}
+\label{classEditor}\index{Editor@{Editor}}
+
+
+Classe responsável por manipular imagens em formato PPM.  
+
+
+
+
+{\ttfamily \#include $<$editor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditor_a9341c079bb20d624d1b9c33498f6708e}{validate\+\_\+operation}} (string operation)
+\begin{DoxyCompactList}\small\item\em Valida a operação que será realizada na imagem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditor_a20aa4165c415d6f0d315cf0b7d418062}{read\+\_\+img}} (string file)
+\begin{DoxyCompactList}\small\item\em Lê a imagem e a operação a partir de um arquivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditor_a88f8f03f98245f4ae899a03adc5fa480}{write\+\_\+img}} ()
+\begin{DoxyCompactList}\small\item\em Escreve a imagem processada em um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por manipular imagens em formato PPM. 
+
+Permite realizar operações de transformação na imagem\+: aumentar 2x, transformar em escala de cinzar, reduzir 3x, rotacionar a esquerda, efeito de nitidez e desfoque. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEditor_a20aa4165c415d6f0d315cf0b7d418062}\label{classEditor_a20aa4165c415d6f0d315cf0b7d418062}} 
+\index{Editor@{Editor}!read\_img@{read\_img}}
+\index{read\_img@{read\_img}!Editor@{Editor}}
+\doxysubsubsection{\texorpdfstring{read\_img()}{read\_img()}}
+{\footnotesize\ttfamily void Editor\+::read\+\_\+img (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})}
+
+
+
+Lê a imagem e a operação a partir de um arquivo. 
+
+Lê a imagem e seu cabeçalho a partir de um arquivo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Caminho do arquivo de entrada.\\
+\hline
+\end{DoxyParams}
+Abre o arquivo fornecido e armazena os pixels na matriz {\itshape img}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & O caminho do arquivo contendo a imagem. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditor_a9341c079bb20d624d1b9c33498f6708e}\label{classEditor_a9341c079bb20d624d1b9c33498f6708e}} 
+\index{Editor@{Editor}!validate\_operation@{validate\_operation}}
+\index{validate\_operation@{validate\_operation}!Editor@{Editor}}
+\doxysubsubsection{\texorpdfstring{validate\_operation()}{validate\_operation()}}
+{\footnotesize\ttfamily void Editor\+::validate\+\_\+operation (\begin{DoxyParamCaption}\item[{string}]{operation }\end{DoxyParamCaption})}
+
+
+
+Valida a operação que será realizada na imagem. 
+
+Valida a operação fornecida.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & A operação a ser validada (ex.\+: \char`\"{}gray\char`\"{}, \char`\"{}enlarge\char`\"{}).\\
+\hline
+\end{DoxyParams}
+Verifica se a operação fornecida é válida. Se for inválida, exibe uma mensagem de erro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & A operação a ser validada (ex.\+: \char`\"{}gray\char`\"{}, \char`\"{}enlarge\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditor_a88f8f03f98245f4ae899a03adc5fa480}\label{classEditor_a88f8f03f98245f4ae899a03adc5fa480}} 
+\index{Editor@{Editor}!write\_img@{write\_img}}
+\index{write\_img@{write\_img}!Editor@{Editor}}
+\doxysubsubsection{\texorpdfstring{write\_img()}{write\_img()}}
+{\footnotesize\ttfamily void Editor\+::write\+\_\+img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escreve a imagem processada em um arquivo. 
+
+Escreve a imagem processada em um novo arquivo. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/editor.\+h\item 
+source/editor.\+cpp\end{DoxyCompactItemize}

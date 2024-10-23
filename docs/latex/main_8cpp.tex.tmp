@@ -1,0 +1,97 @@
+\hypertarget{main_8cpp}{}\doxysection{source/main.cpp File Reference}
+\label{main_8cpp}\index{source/main.cpp@{source/main.cpp}}
+
+
+Arquivo contendo a implementação dos métodos da classe \mbox{\hyperlink{classEditor}{Editor}} declarada em edtor.\+h.  
+
+
+{\ttfamily \#include \char`\"{}editor.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_aea1e4741dae86d7944602f62c8474a2e}{print\+\_\+usage}} (string program\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Imprime uma mensagem explicando como o programa deve ser usado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função principal do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo contendo a implementação dos métodos da classe \mbox{\hyperlink{classEditor}{Editor}} declarada em edtor.\+h. 
+
+Arquivo com a classe principal do projeto.
+
+Declaração da classe \mbox{\hyperlink{classEditor}{Editor}}.
+
+\begin{DoxyAuthor}{Author}
+Júlia Guilhermino (juh,\href{mailto:guilhermino03@gmail.com}{\texttt{ guilhermino03@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/10-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Júlia Guilhermino (juh,\href{mailto:guilhermino03@gmail.com}{\texttt{ guilhermino03@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/10-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Função principal do programa. 
+
+Esta função valida os argumentos fornecidos na linha de comando e executa as operações desejadas em uma imagem, utilizando a classe {\ttfamily \mbox{\hyperlink{classEditor}{Editor}}}. Se os argumentos forem inválidos, exibe uma mensagem de uso explicativa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Número de argumentos passados na linha de comando. \\
+\hline
+{\em argv} & Vetor de argumentos, onde\+:
+\begin{DoxyItemize}
+\item {\ttfamily argv\mbox{[}0\mbox{]}} é o nome do programa.
+\item {\ttfamily argv\mbox{[}1\mbox{]}} é a operação a ser realizada (como \char`\"{}gray\char`\"{}, \char`\"{}enlarge\char`\"{}, etc.).
+\item {\ttfamily argv\mbox{[}2\mbox{]}} é o caminho para o arquivo de imagem de entrada.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 0 ao finalizar com sucesso. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_aea1e4741dae86d7944602f62c8474a2e}\label{main_8cpp_aea1e4741dae86d7944602f62c8474a2e}} 
+\index{main.cpp@{main.cpp}!print\_usage@{print\_usage}}
+\index{print\_usage@{print\_usage}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_usage()}{print\_usage()}}
+{\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}\item[{string}]{program\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Imprime uma mensagem explicando como o programa deve ser usado. 
+
+Esta função fornece instruções sobre como executar o programa, indicando as operações disponíveis e o formato esperado para os argumentos na linha de comando.
+
+
+\begin{DoxyParams}{Parameters}
+{\em program\+\_\+name} & Nome do arquivo executável (geralmente passado como {\ttfamily argv\mbox{[}0\mbox{]}}). \\
+\hline
+\end{DoxyParams}
