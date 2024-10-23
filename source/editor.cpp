@@ -117,11 +117,87 @@ void Editor::reduce(){
     height = new_img.size();
 }
 
-void Editor::rotate(){}
+void Editor::rotate(){
+    for (int j = 0; j < width; j++) {
+        vector <Pixel> line; //cria a linha da nova imagem
 
-void Editor::sharp(){}
+        for (int i = 0; i < height; i++) {
+            Pixel pixel;
+            pixel.r = img[i][j].r;
+            pixel.g = img[i][j].g;
+            pixel.b = img[i][j].b;
 
-void Editor::blur(){}
+            line.push_back(pixel); //salva o pixel na nova linha
+        }
+        new_img.push_back(line);   //salva linha na nova imagem
+    }
+    width = new_img[0].size();
+    height = new_img.size();
+}
+
+void Editor::sharp(){
+    vector <vector <int>> sharp = {{0, -1, 0}, {-1, 5, -1}, {0, -1, 0}};
+
+    for (int i = 1; i < height-1; i++) {
+        vector <Pixel> line; //cria a linha da nova imagem
+
+        for (int j = 1; j < width-1; j++) {
+            int r = 0, g = 0, b = 0;
+            
+            //Aplicação do filtro no pixel
+            for (int k = -1; k <=  1; k++) {
+                for (int l = -1; l <=  1; l++) {
+                    r += img[i + k][j + l].r * sharp[k + 1][l + 1];
+                    g += img[i + k][j + l].g * sharp[k + 1][l + 1];
+                    b += img[i + k][j + l].b * sharp[k + 1][l + 1];
+                }
+            }
+
+            // Instanciando novo pixel
+            Pixel pixel;
+            pixel.r = r;
+            pixel.g = g;
+            pixel.b = b;
+
+            line.push_back(pixel); //salva o pixel na nova linha
+        }
+        new_img.push_back(line);   //salva linha na nova imagem
+    }
+
+    width = new_img[0].size();
+    height = new_img.size();
+}
+
+void Editor::blur(){
+    for (int i = 1; i < height-1; i++) {
+        vector <Pixel> line; //cria a linha da nova imagem
+
+        for (int j = 1; j < width-1; j++) {
+            int r = 0, g = 0, b = 0;
+            
+            //Aplicação do filtro no pixel
+            for (int k = -1; k <=  1; k++) {
+                for (int l = -1; l <=  1; l++) {
+                    r += img[i + k][j + l].r * 1/9;
+                    g += img[i + k][j + l].g * 1/9;
+                    b += img[i + k][j + l].b * 1/9;
+                }
+            }
+
+            // Instanciando novo pixel
+            Pixel pixel;
+            pixel.r = r;
+            pixel.g = g;
+            pixel.b = b;
+
+            line.push_back(pixel); //salva o pixel na nova linha
+        }
+        new_img.push_back(line);   //salva linha na nova imagem
+    }
+
+    width = new_img[0].size();
+    height = new_img.size();
+}
 
 void Editor::write_img() {
     ofstream output("imgs/nova-img.ppm");
