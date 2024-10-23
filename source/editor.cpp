@@ -59,6 +59,8 @@ void Editor::read_img(string file) {
 
 /*!
  * @brief Converte a imagem para escala de cinza.
+ *
+ * Componentes rgb de um pixel cinza é dado pela média dos componetes rgb do pixel original.
  */
 void Editor::gray() {
     for (int i = 0; i < height; ++i) {
@@ -74,6 +76,9 @@ void Editor::gray() {
 
 /*!
  * @brief Aumenta o tamanho da imagem em 2x.
+ *
+ * Adiciona uma nova coluna entre as colunas existentes. Comoponetes rgb são dados pela média dos vizinhos individualmente.
+ * 
  */
 void Editor::enlarge() {
     vector<vector<Pixel>> enlarge;
@@ -113,6 +118,9 @@ void Editor::enlarge() {
 
 /*!
  * @brief Reduz o tamanho da imagem em 2x.
+ *
+ * 4 pixels adjacentes viram um único pixel cujo os componentes rgb são dados pela média dos componentes rgb
+ * dos 4 pixels originais.
  */
 void Editor::reduce() {
     for (int i = 0; i < height - 1; i += 2) {
@@ -133,6 +141,8 @@ void Editor::reduce() {
 
 /*!
  * @brief Rotaciona a imagem.
+ *
+ * Troca as linhas e as colunas da imagem orginal.
  */
 void Editor::rotate() {
     for (int j = 0; j < width; ++j) {
@@ -148,6 +158,7 @@ void Editor::rotate() {
 
 /*!
  * @brief Aplica um filtro de nitidez à imagem.
+ *
  */
 void Editor::sharp() {
     vector<vector<int>> sharp = {{0, -1, 0}, {-1, 5, -1}, {0, -1, 0}};
